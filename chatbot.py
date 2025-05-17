@@ -17,7 +17,7 @@ try:
 except Exception as e:
     raise Exception(f"Failed to initialize Groq client: {e}")
 
-def load_dataset(df="C:\\Users\\hariharan\\Desktop\\chatbot\\indianfood_dataset.xlsx"):
+def load_dataset(df="C:\\Users\\akshaya\\Desktop\\chatbot\\indianfood_dataset.xlsx"):
     try:
         if not os.path.exists(df):
             raise FileNotFoundError(f"Dataset file '{df}' not found in the current directory")
