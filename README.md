@@ -45,13 +45,57 @@ I designed Recipe Buddy to work in a few simple steps:
 * Semantic Search: When you enter a query, the app extracts ingredients and uses FAISS to find the most similar recipes in the dataset based on their embeddings.
 * Mood Detection: I added a feature to detect your mood (e.g., "festive", "comfort") from the query, which personalizes the suggestions.
 * Recipe Generation: If no matches are found in the dataset, the Groq API generates a new recipe. The response is structured with separate Ingredients and Method sections for clarity.
-* Display: The Streamlit app shows the recipes in styled cards, with filters for cuisine and diet, a dynamic title (e.g., "🍴 Recipe Buddy - Festive Vibes"), and a "Copy Recipe" button.
+* Display: The Streamlit app shows the recipes in styled cards, with filters for cuisine and diet, a dynamic title (Recipe Buddy), and a "Copy Recipe" button.
 * It’s a Retrieval-Augmented Generation (RAG) system, which means it combines retrieval (searching the dataset) with generation (creating new recipes) to give you the best of both worlds.
 
 
 # Set Up the Groq API Key:
 I used the Groq API for generating recipes. You’ll need to get your own API key from Groq. Once you have it, create a .env file in the project directory and add 
 GROQ_API_KEY=your-api-key-here
+
+
+ # Installation
+
+Here’s how I set up the project on my machine:
+
+* Clone the Repository:
+
+git clone https://github.com/akshayasen/recipebuddybot.git
+cd recipebuddybot
+
+* Install Dependencies:
+
+I’ve listed all the required packages in requirements.txt. Install them using:
+
+pip install -r requirements.txt
+
+* Set Up the Groq API Key:
+
+Create a .env file in the project directory and add your Groq API key:
+
+GROQ_API_KEY=your-api-key-here
+
+* Add the Dataset:
+
+Place the indianfood_dataset.xlsx file in the project directory. 
+
+* Run the App:
+
+Start the Streamlit app with:
+
+streamlit run app.py
+
+Then open http://localhost:8501 in your browser to use the bot!
+
+# Usage
+
+Once the app is running, here’s how you can use it:
+
+* Enter a Query: Type a dish name (e.g., "chicken curry"), ingredients (e.g., "tomatoes and rice"), or a mood (e.g., "I’m feeling festive") in the text box.
+* Apply Filters: Use the sidebar to filter recipes by cuisine (e.g., South Indian) or diet (e.g., Vegetarian).
+* View Recipes: The app will display recipe suggestions in styled cards, with separate sections for Ingredients and Method.
+* Copy Recipes: Click the "Copy Recipe" button to copy the recipe text.
+* Clear the Input: Hit the "Clear" button to start a new search.
 
 # Features
 I added  these features to Recipe Buddy:
@@ -61,3 +105,23 @@ I added  these features to Recipe Buddy:
 * UI: Styled recipe cards, a gradient background, sidebar filters, and a dynamic title make the app visually appealing.
 * Error Handling: If you enter a vague query (e.g., "recipe and give"), the app shows a helpful warning instead of crashing.
 * Copy Functionality: Easily copy recipes with a single click.
+
+
+
+# Future Improvements
+
+I have some ideas to make RecipeBuddyBot even better in the future:
+
+* Add more recipes to the dataset to cover a wider variety of cuisines.
+* Improve ingredient detection using a more advanced NLP model like spaCy.
+* Include additional recipe details like cooking time or serving size.
+* Add user features like a search history or the ability to save favorite recipes.
+* Deploy the app to Streamlit Cloud so anyone can try it online.
+
+
+#  Contact
+
+I’d love to hear your feedback or collaborate on future projects! You can reach me at:
+
+* GitHub: github.com/akshayasen
+* Email: akshayasenthil963@gmail.com
